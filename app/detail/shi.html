@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>诗</title>
+    <link href="../css/mui.css" rel="stylesheet" />
+    <link href="../css/mui.picker.min.css" rel="stylesheet" />
+    <link href="../hcss/game.css" rel="stylesheet" />
+    <style>
+        html,
+        body,
+        .mui-content {
+            height: 0px;
+            margin: 0px;
+            background-color: #efeff4;
+        }
+        h5.mui-content-padded {
+            margin-left: 3px;
+            margin-top: 20px !important;
+        }
+        h5.mui-content-padded:first-child {
+            margin-top: 12px !important;
+        }
+        .mui-btn {
+            font-size: 16px;
+            padding: 8px;
+            margin: 3px;
+        }
+        .ui-alert {
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 16px;
+        }
+        * {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+        }
+    </style>
+
+    <style>
+
+        .mui-plus .plus{
+            display: inline;
+        }
+
+        .plus{
+            display: none;
+        }
+
+        #topPopover {
+            position: fixed;
+            top: 16px;
+            right: 6px;
+        }
+        #topPopover .mui-popover-arrow {
+            left: auto;
+            right: 6px;
+        }
+        p {
+            text-indent: 22px;
+        }
+        span.mui-icon {
+            font-size: 14px;
+            color: #007aff;
+            margin-left: -15px;
+            padding-right: 10px;
+        }
+        .mui-popover {
+            height: 300px;
+        }
+        .mui-content {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav ct-header">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">诗</h1>
+</header>
+<div class="mui-content">
+    <h5>详情</h5>
+    <ul id="title" class="mui-table-view mui-input-group">
+    </ul>
+    <ul id="content" class="mui-table-view mui-input-group">
+    </ul>
+</div>
+<script src="../js/mui.min.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/mui.picker.min.js"></script>
+<script src="../common/date.js"></script>
+<script src="../hjs/shi.js"></script>
+</body>
+</html>

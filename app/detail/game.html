@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" /> 
+  <title>电子竞技</title> 
+  <link href="../css/mui.css" rel="stylesheet" /> 
+  <link href="../css/mui.picker.min.css" rel="stylesheet" /> 
+  <link href="../hcss/game.css" rel="stylesheet" /> 
+  <style>
+			html,
+			body,
+			.mui-content {
+				height: 0px;
+				margin: 0px;
+				background-color: #efeff4;
+			}
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			* {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+			}
+		</style> 
+		
+		<style>
+			
+			.mui-plus .plus{
+				display: inline;
+			}
+			
+			.plus{
+				display: none;
+			}
+			
+			#topPopover {
+				position: fixed;
+				top: 16px;
+				right: 6px;
+			}
+			#topPopover .mui-popover-arrow {
+				left: auto;
+				right: 6px;
+			}
+			p {
+				text-indent: 22px;
+			}
+			span.mui-icon {
+				font-size: 14px;
+				color: #007aff;
+				margin-left: -15px;
+				padding-right: 10px;
+			}
+			.mui-popover {
+				height: 300px;
+			}
+			.mui-content {
+				padding: 10px;
+			}
+		</style>
+ </head> 
+ <body> 
+  <header class="mui-bar mui-bar-nav ct-header"> 
+   <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a> 
+   <h1 class="mui-title">电子竞技</h1> 
+  </header> 
+  <div class="mui-content"> 
+   <h5>申请详情</h5> 
+   <ul class="mui-table-view mui-input-group">
+    <li class="mui-input-row"> <label>标题</label> <input type="text" class="mui-input-clear mui-input" placeholder="发起活动标题" /> </li> 
+    <li class="mui-input-row"> <label>预计人数</label> <input type="text" class="mui-input-clear mui-input" placeholder="不少于该人数" /> </li>
+    <li class="mui-input-row select"> <label>报名形式</label> <select class="mui-select"> <option value="">请选择</option><option value="one">个人</option> <option value="more">团队</option> </select> </li>  
+   </ul> 
+   <ul class="mui-table-view"> 
+    <li class="mui-table-view-cell" data-event="tap&gt;setRequirement"> <a class="mui-navigate-right"> <label>开始日期</label><span class="ct-right-text btn-date" name="start-time">选择时间</span> </a> </li> 
+    <li class="mui-table-view-cell" data-event="tap&gt;setRequirement"> <a class="mui-navigate-right"> <label>结束日期</label><span class="ct-right-text btn-date" name="">选择时间</span> </a> </li> 
+    </ul> 
+   <ul class="mui-table-view"> 
+    <li class="mui-table-view-cell" data-event="tap&gt;setRequirement"> <a class="mui-navigate-right"> 特殊要求 <span class="ct-right-text">无要求</span> </a> </li> 
+   </ul> 
+   <p class="ct-tips">订单提交后我们将先进行预授权操作，订单确认后再操作扣款。该订单确认后不可被取消修改，若未入住或取消修改，我们将收取您首日房费RMB 365。</p> 
+   <p class="ct-tips">目前北京全城禁烟，酒店均为无烟房。</p> 
+   <div class="mui-tab  mui-bar-tab">
+    	<button id="publish" type="button" class="mui-btn mui-btn-primary mui-btn-block">发布</button>
+   </div>
+  </div> 
+  <script src="../js/mui.min.js"></script> 
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/mui.picker.min.js"></script> 
+  <script src="../common/date.js"></script> 
+  <script src="../hjs/game.js"></script> 
+		
+ </body>
+</html>

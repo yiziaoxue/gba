@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>专题</title>
+	
+</head>
+<link rel="stylesheet" href="css/mui.min.css" />
+<!--<script src="js/iscroll.js"></script>-->
+<script src="js/jquery.min.js"></script>
+<script src="js/new_remall.js"></script>
+<script type="text/javascript"></script>
+<script src="js/mui.min.js"></script>
+<style>
+	a,body,div,html,img,li,span,ul{margin:0;padding:0}body{background-color:#fff;font-size:1pc;font-family:Microsoft YaHei}
+	.top_box img{
+		width:100%; 
+		height: 92.5px;
+	}
+	body {
+		height: 100%;
+		width: 100%
+	}
+	html {
+		height: 100%;
+		width: 100%
+	}
+	.spec_content{
+		width: 92%;
+		height: 70px;
+		margin: 0 auto;
+		margin-top: 9px;
+		font-size: 16px;
+		height: 84px;
+	}
+	.spec_content>span{
+		
+	}
+	.spec_content>span>g{
+		color: #3991F1;
+	}
+	.bancontent_box{
+		width: 100%;
+		border-top: 1px solid #E7E7E7;
+	}
+	.bancontent{
+		width: 92%;
+		margin: 0 auto;
+		font-size: 16px;
+		height: 93px;
+		/*border: 1px solid #000;*/
+	}
+	.bancontent_left_content{
+	   	width: 68%;
+	    height: 41px;
+	    margin-top: 12px;
+	    /*禁止换行*/
+	   	display: block;
+	    /*white-space:wrap;*/
+	    overflow: hidden;
+	    text-overflow :ellipsis;
+	}
+	.bancontent_img>img{
+	    width: 28%;
+	    height: 72px;
+	    float: right;
+	    margin-top: -45px;
+	}
+	.bancontent_from,.bancontent_time{
+		display: inline-block;
+	    color: #C9C9C9;
+	    font-size: 12px;
+	    margin-top: 10px;
+	}
+	.bancontent_time{
+		margin-left: 52px;
+	}
+	#wrapper{
+		position: absolute;
+		display: inline-block;
+		width: 100%;
+		height: 97%
+	}
+	#scroller {
+	   position:relative;
+	  /* -webkit-touch-callout:none;*/
+	   float:left;
+	   width:100%;
+	   padding:0;
+  }
+</style>
+<body>
+		<!--下拉刷新容器--> 
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<!--顶部轮播图片-->
+				<div class="top_box">
+					<!--官方写法 页面上会显示一个 开关按钮-->
+					<!--<div class="mui-content">
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li id="switch" class="mui-table-view-cell">
+								定时轮播
+								<div class="mui-switch mui-switch-mini mui-active">
+									<div class="mui-switch-handle"></div>
+								</div>
+							</li>
+						</ul>
+					</div>-->
+					
+					<!--定时轮播-->
+					<div id="slider" class="mui-slider" >
+						<div class="mui-slider-group mui-slider-loop">
+							<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#">
+									<img src="images/lindan.jpg">
+								</a>
+							</div>
+							<!-- 第一张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="images/meixi.jpg">
+								</a>
+							</div>
+							<!-- 第二张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="images/kobe.jpg">
+								</a>
+							</div>
+							<!-- 第二张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="images/lindan.jpg">
+								</a>
+							</div>
+							<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#">
+									<img src="images/lindan.jpg">
+								</a>
+							</div>
+						</div>
+						<!--图片上小圆点显示-->
+						<div class="mui-slider-indicator">
+							<div class="mui-indicator mui-active"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+							<!--<div class="mui-indicator"></div>-->
+						</div>
+					</div>
+				</div>
+				<div class="spec_content">
+					<span><g>专题导读</g>过去几年,数据治理和数据完整性的问题成为监管部门执法行动中的突出问题。监管部门审查了数千页的原始提交数据以及</span>
+				</div>
+				<div class='bancontent_box'>
+					<!--公共的-->
+					<div class='bancontent'>
+						<div class='bancontent_left_content'>
+							<span class='bancontent_left_content_font'>过去几年,数据治理和数据完整性的问题成为监管部门执法行动中的突出问题。监管部门审查了数千页的原始提交数据以及</span>
+						</div>
+						<span class="bancontent_img"><img src="img/6666666.jpg" alt="" /></span>
+						<span class="bancontent_from">啦啦啦</span>
+						<span class="bancontent_time">2017-08-04</span>
+					</div>
+					
+					<div class='bancontent'>
+						<div class='bancontent_left_content'>
+							<span class='bancontent_left_content_font'>过去几年,数据治理和数据完整性的问题成为监管部门执法行动中的突出问题。监管部门审查了数千页的原始提交数据以及</span>
+						</div>
+						<span class="bancontent_img"><img src="img/6666666.jpg" alt="" /></span>
+						<span class="bancontent_from">啦啦啦</span>
+						<span class="bancontent_time">2017-08-04</span>
+					</div>
+					
+					<div class='bancontent'>
+						<div class='bancontent_left_content'>
+							<span class='bancontent_left_content_font'>过去几年,数据治理和数据完整性的问题成为监管部门执法行动中的突出问题。监管部门审查了数千页的原始提交数据以及</span>
+						</div>
+						<span class="bancontent_img"><img src="img/6666666.jpg" alt="" /></span>
+						<span class="bancontent_from">啦啦啦</span>
+						<span class="bancontent_time">2017-08-04</span>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+//		超出省略号
+		for(var i=0;i<$('.bancontent_left_content_font').length;i++){
+			if($('.bancontent_left_content_font').eq(i).text().length>32){
+				var text = $('.bancontent_left_content_font').text();
+				$('.bancontent_left_content_font').eq(i).text(text.substr(0,32)+"...")
+			}
+		}
+		//初始化--有好多参数（可以参考 官方api "http://dev.dcloud.net.cn/mui/pulldown/"）
+		mui.init({
+			pullRefresh: {
+				container: '#pullrefresh',
+				down: {//下拉 
+					callback: pulldownRefresh,
+//						auto:true,//可选,默认false.自动上拉加载一次
+				},
+				up: {//上拉
+					auto:false,//可选,默认false.自动上拉加载一次
+					contentrefresh: '正在加载上拉...',
+					callback: pullupRefresh,
+					contentnomore:'没有更多数据了',//可选，请求完毕若没有更多数据时显示的提醒内容；
+				}
+				
+			}
+		});
+			
+			//下拉刷新具体业务实现
+			function pulldownRefresh() {
+				setTimeout(function() {
+					//do something
+
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+				}, 1500);
+			}
+			
+			
+			//上拉加载具体业务实现
+			var count = 0;
+			function pullupRefresh() {
+				setTimeout(function() {
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+					//do something
+				}, 1500);
+			}
+			//注意 点击事件一定要 按照mui的方法写  如果写click会不生效
+			mui(".bancontent").on("tap","div span",foo_1);//点击事件
+			function foo_1(){
+				alert("点击列表生效了")
+			}
+			
+			
+			//图片轮播
+
+			//进入页面自动轮播  简单明了
+			var slider = mui("#slider");
+			var gallery = mui('.mui-slider');  
+			gallery.slider({  
+			  interval:1000//自动轮播周期，若为0则不自动播放，默认为0；  
+			});  
+			
+			//官方提供的 模式 会显示一个 轮播开关 但是不会自动轮播
+			//			mui.init({
+//				swipeBack:true //启用右滑关闭功能
+//			});
+//			document.getElementById("switch").addEventListener('toggle', function(e) {
+//				if (e.detail.isActive) {
+//					slider.slider({
+//						interval: 1000
+//					});
+//				} else {
+//					slider.slider({
+//						interval: 0
+//					});
+//				}
+//			});
+	});
+</script>
+
+</html>

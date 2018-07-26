@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>4s店</title>
+    
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+   
+</head>
+<body>
+	<!--顶部-->
+	
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">全部车辆</h1>
+	</header>
+	
+	<!--底部-->	
+	<footer class="mui-bar mui-bar-footer" style="padding: 0;">
+		<ul>
+			<li>
+				<a href="index.html">
+					 <span class="mui-icon mui-icon-home"></span>
+				</a>
+			</li>
+			<li>
+				<a href="compose.html">
+					 <span class="mui-icon mui-icon-compose"></span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="self.html">
+					 <span class="mui-icon mui-icon-contact"></span>
+				</a>
+			</li>
+			<li>
+				<a href="set.html">
+					 <span class="mui-icon mui-icon-gear"></span>
+				</a>
+			</li>
+		</ul>	
+	</footer>
+	<div class="mui-content">
+	  		<ul id="OA_task_2" class="mui-table-view">
+				
+				<li class="mui-table-view-cell">
+					<!--<div class="mui-slider-left mui-disabled">
+						<a class="mui-btn mui-btn-red">编辑</a>
+					</div>-->
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<img src="images/logogog.png"/>
+						<p>比亚迪f0</p>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<!--<div class="mui-slider-left mui-disabled">
+						<a class="mui-btn mui-btn-red">编辑</a>
+					</div>-->
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<img src="images/logogog.png"/>
+						<p>比亚迪f0</p>
+					</div>
+				</li>
+			</ul>	
+			<button class="btn">
+				<a href="chose.html">选择车辆</a>
+			</button>
+			
+	</div>
+		
+	
+	 <script src="js/mui.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+      	(function($) {
+				
+				var btnArray = ['确认', '取消'];
+				//第二个demo，向左拖拽后显示操作图标，释放后自动触发的业务逻辑
+				$('#OA_task_2').on('slideleft', '.mui-table-view-cell', function(event) {
+					var elem = this;
+					mui.confirm('确认删除该条记录？', 'Hello MUI', btnArray, function(e) {
+						if (e.index == 0) {
+							elem.parentNode.removeChild(elem);
+						} else {
+							setTimeout(function() {
+								$.swipeoutClose(elem);
+							}, 0);
+						}
+					});
+				});
+				
+			})(mui);
+		
+    </script>
+</body>
+</html>
