@@ -92,8 +92,11 @@ func Detail(c *gin.Context){
 func convertContent(content string) []string{
 	reg := regexp.MustCompile("\\s+")
 	str := reg.ReplaceAllString(content, "")
+	reg = regexp.MustCompile("#(.*?)#")
+	str = reg.ReplaceAllString(str, "")
 	str = strings.Replace(str, "<br/>", "", -1)	
 	str = strings.Replace(str, "<p>", "", -1)	
+	str = strings.Replace(str, "</p>", "", -1)
 	c := strings.Split(str, "。")
 	return c
 }
