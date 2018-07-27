@@ -1,6 +1,6 @@
 ;(function() {
 	var App = function(ele, opt){
-		
+        this.addr = "http://127.0.0.1:8000/"
 	}
 	App.prototype = {
 		exec : function() {
@@ -32,7 +32,8 @@
 					'username':username,
 					'password':password,
 			}
-			$.ajax({type:"POST", dataType:'json', url:'http://127.0.0.1:8000/v1/sys/login', data:param,
+			url = _this.addr+"v1/sys/login"
+			$.ajax({type:"POST", dataType:'json', url:url, data:param,
 				success: function (data){
 					if(data.status == 1){
 						var checked = $("#autoLogin").hasClass("mui-active");//获取“是否记住密码”复选框  

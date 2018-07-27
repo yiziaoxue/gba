@@ -1,13 +1,14 @@
 ;(function() {
 	var App = function(ele, opt){
-		
+        this.addr = "http://127.0.0.1:8000/"
 	}
 	App.prototype = {
 		exec : function() {
 			var _this = this;
+			url = _this.addr+"v1/poem/detail"
 			var id = _this.getQueryString('id');
 			//加载推荐数据
-			$.ajax({ url: "http://127.0.0.1:8000/v1/poem/detail",type:"POST", data:{'id':id}, success: function(data){
+			$.ajax({ url: url,type:"POST", data:{'id':id}, success: function(data){
 				if(data && data.status == 1){
 					var poem = data.data
 					var html = '<li class="mui-input-row"> <input type="text" class="mui-input-clear mui-input" style="text-align:center" placeholder="'+poem.title+'" disabled /></li>'

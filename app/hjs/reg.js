@@ -1,6 +1,6 @@
 ;(function() {
 	var App = function(ele, opt){
-		
+        this.addr = "http://127.0.0.1:8000/"
 	}
 	App.prototype = {
 		exec : function() {
@@ -30,7 +30,8 @@
 					'password':password,
 					'email':email,
 			}
-			$.ajax({type:"POST", dataType:'json', url:'http://127.0.0.1:8000/v1/sys/regist', data:param,
+			url = _this.addr+"v1/sys/regist"
+			$.ajax({type:"POST", dataType:'json', url:url, data:param,
 				success: function (data){
 					if(data.Status == 1){
 						$(location).attr('href', 'index.html');

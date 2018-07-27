@@ -1,6 +1,6 @@
 ;(function() {
 	var App = function(ele, opt){
-		
+		this.addr = "http://127.0.0.1:8000/"
 	}
 	App.prototype = {
 		exec : function() {
@@ -13,9 +13,9 @@
 			gallery.slider({  
 			  interval:1000//自动轮播周期，若为0则不自动播放，默认为0；  
 			});  
-			
+			url = _this.addr+"v1/poem/recommend"
 			//加载推荐数据
-			$.ajax({ url: "http://127.0.0.1:8000/v1/poem/recommend", success: function(data){
+			$.ajax({ url: url, success: function(data){
 				if(data && data.status == 1){
 					$.each(data.data,function(index, val){
 						var html = '<li class="mui-table-view-cell mui-media"><a href="detail/shi.html?id='+val.Id+'"><div class="mui-media-body">'
