@@ -1,6 +1,6 @@
 ;(function() {
 	var App = function(ele, opt){
-        this.addr = "http://127.0.0.1:8000/"
+        this.addr = addr
 	}
 	App.prototype = {
 		exec : function() {

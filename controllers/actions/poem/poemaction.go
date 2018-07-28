@@ -42,7 +42,8 @@ type Res struct {
 
 //推荐接口
 func Recommend(c *gin.Context){
-	rows, err := db.Query("SELECT id, title,author,dynasty,content FROM poem_detail limit 10")
+	num := c.Query("num")
+	rows, err := db.Query("SELECT id, title,author,dynasty,content FROM poem_detail limit ?", num)
 	ls := []Poem{}
 	for rows.Next() {
 		var id int
