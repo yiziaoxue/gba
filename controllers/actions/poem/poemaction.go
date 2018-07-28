@@ -5,8 +5,7 @@ import (
 //	"time"
 //	"net/http"
 	"strings"
-	"regexp"
-	"gba/common"
+	"shi/common"
 	"database/sql"
 //	"encoding/json"
     "github.com/gin-gonic/gin"
@@ -90,13 +89,6 @@ func Detail(c *gin.Context){
 
 //诗歌内容转换
 func convertContent(content string) []string{
-	reg := regexp.MustCompile("\\s+")
-	str := reg.ReplaceAllString(content, "")
-	reg = regexp.MustCompile("#(.*?)#")
-	str = reg.ReplaceAllString(str, "")
-	str = strings.Replace(str, "<br/>", "", -1)	
-	str = strings.Replace(str, "<p>", "", -1)	
-	str = strings.Replace(str, "</p>", "", -1)
-	c := strings.Split(str, "。")
+	c := strings.Split(content, "|")
 	return c
 }

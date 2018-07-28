@@ -2,7 +2,7 @@ package main
 
 import (
 //	. "fmt"
-	_ "gba/common"
+	_ "shi/common"
     "github.com/gin-gonic/gin"
     "github.com/gin-contrib/cors"
 )
