@@ -1,1 +1,1 @@
-var addr = "http://127.0.0.1:8000/";  //全局变量
+var addr = "http://localhost:8000/";  //全局变量
