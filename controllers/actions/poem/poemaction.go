@@ -5,11 +5,13 @@ import (
 //	"time"
 //	"net/http"
 	"strings"
+	"math/rand"
 	"shi/common"
 	"database/sql"
 //	"encoding/json"
     "github.com/gin-gonic/gin"
     _"github.com/go-sql-driver/mysql"
+	"strconv"
 )
 var db *sql.DB
 
@@ -42,8 +44,11 @@ type Res struct {
 
 //推荐接口
 func Recommend(c *gin.Context){
-	num := c.DefaultQuery("num", "6")
-	rows, err := db.Query("SELECT id, title,author,dynasty,content FROM poem_detail limit ?", num)
+	size := c.DefaultQuery("num", "6")
+	nums := rand.Intn(50000)
+	var page,_ = strconv.Atoi(size)
+	page = page + nums
+	rows, err := db.Query("SELECT id, title,author,dynasty,content FROM poem_detail limit ?,?", page, size)
 	ls := []Poem{}
 	for rows.Next() {
 		var id int
