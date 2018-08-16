@@ -89,7 +89,14 @@ func Detail(c *gin.Context){
 }
 
 //诗歌内容转换
-func convertContent(content string) []string{
-	c := strings.Split(content, "|")
-	return c
+func convertContent(content string)(ret []string){
+	a := strings.Split(content, "|")
+	a_len := len(a)
+	for i := 0; i < a_len; i++ {
+		if (i > 0 && a[i-1] == a[i]) || len(a[i]) == 0 {
+			continue
+		}
+		ret = append(ret, a[i])
+	}
+	return ret
 }

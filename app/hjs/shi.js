@@ -11,17 +11,16 @@
 			$.ajax({ url: url,type:"POST", data:{'id':id}, success: function(data){
 				if(data && data.status == 1){
 					var poem = data.data
-					var html = '<li class="mui-input-row"> <input type="text" class="mui-input-clear mui-input" style="text-align:center" placeholder="'+poem.title+'" disabled /></li>'
+					var html = '<li class="mui-table-view-cell" style="text-align: center">'+poem.title+'</li>'
 					$('#title').append(html);
+                    var html = '<li class="mui-table-view-cell" style="text-align: right;color:#6d6d72;font-size: 13px;">'+poem.author+'</li>'
+                    $('#author').append(html);
 					$.each(poem.content,function(index, val){
-						var html = '<li class="mui-input-row"><input type="text" class="mui-input-clear mui-input" style="text-align:center" placeholder="'+val+'" disabled /></li>'
+						var html = '<li class="mui-table-view-cell" style="color:#6d6d72;font-size: 15px;">'+ val +'</li>'
 	                    $('#content').append(html)
 					});
 				}
 		    }});
-			$('#issue').bind("click", _this, function(){
-				$(location).attr('href', 'detail/publish.html');
-			});
 		},
 		
 		getQueryString : function(name) {
