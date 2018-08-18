@@ -1,10 +1,8 @@
 /*!
  * =====================================================
- * Mui v3.3.0 (http://dev.dcloud.net.cn/mui)
+ * Mui v3.7.2 (http://dev.dcloud.net.cn/mui)
  * =====================================================
- */
-/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
-html {
+ *//*! normalize.css v3.0.1 | MIT License | git.io/normalize */html {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%
 }
@@ -25,11 +23,9 @@ audio,canvas,progress,video {
 audio:not([controls]) {
     display: none;
     height: 0
-}
-
-[hidden],template {
-    display: none
-}
+}[hidden],template {
+     display: none
+ }
 
 a {
     background: 0 0
@@ -254,7 +250,8 @@ a:active {
 }
 
 .mui-content-padded {
-    margin: 10px
+    z-index: 9999;
+    margin: 5px
 }
 
 .mui-inline {
@@ -481,9 +478,9 @@ p {
     width: 8.33333333%
 }
 
-@media (min-width: 400px) {
+@media (min-width:400px) {
     .mui-col-sm-12 {
-        width:100%
+        width: 100%
     }
 
     .mui-col-sm-11 {
@@ -532,21 +529,20 @@ p {
 }
 
 .mui-scroll-wrapper {
-    position：relative
-    z-index: 2;
-    top: 0;
+    position: absolute;
+    z-index: 0;
+    top: 40%;
     bottom: 0;
-    left: 0;
     overflow: hidden;
-    width: 100%
+    width: 100%;
+    margin：0 auto;
 }
 
 .mui-scroll {
-    position：relative
-    z-index: 1;
-    width: 100%;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0)
+    position: absolute;
+    z-index: 0;
+    width: 95%;
+    margin：0 auto;
 }
 
 .mui-scrollbar {
@@ -911,7 +907,7 @@ p {
     transition-duration: .2s;
     text-align: center;
     vertical-align: top;
-    /*white-space: nowrap;*/
+    white-space: nowrap;
     color: #333;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -1103,6 +1099,17 @@ p {
     height: 24px
 }
 
+.mui-btn .mui-spinner {
+    width: 14px;
+    height: 14px;
+    vertical-align: text-bottom
+}
+
+.mui-btn-block .mui-spinner {
+    width: 22px;
+    height: 22px
+}
+
 .mui-bar {
     position: fixed;
     z-index: 10;
@@ -1190,7 +1197,7 @@ p {
     margin: 0 -10px;
     padding: 0;
     text-align: center;
-    /*white-space: nowrap;*/
+    white-space: nowrap;
     color: #000
 }
 
@@ -1886,7 +1893,7 @@ p {
 }
 
 .mui-table-view .mui-media,.mui-table-view .mui-media-body {
-    overflow: hidden
+    /*overflow: hidden*/
 }
 
 .mui-table-view .mui-media-large .mui-media-object {
@@ -3717,7 +3724,7 @@ body>.mui-progressbar {
     visibility: hidden;
     overflow: hidden;
     width: 100%;
-    height: 50px
+    height: 30px
 }
 
 .mui-plus-pullrefresh .mui-pull-bottom-pocket,.mui-plus-pullrefresh .mui-pull-top-pocket {
@@ -3730,7 +3737,7 @@ body>.mui-progressbar {
 }
 
 .mui-bar-nav~.mui-content .mui-pull-top-pocket {
-    top: 44px
+    top: 5px
 }
 
 .mui-bar-nav~.mui-bar-header-secondary~.mui-content .mui-pull-top-pocket {
@@ -3740,7 +3747,7 @@ body>.mui-progressbar {
 .mui-pull-bottom-pocket {
     position: relative;
     bottom: 0;
-    height: 40px
+    height: 50px
 }
 
 .mui-pull-bottom-pocket .mui-pull-loading {
@@ -3794,28 +3801,29 @@ body>.mui-progressbar {
 }
 
 .mui-toast-container {
+    line-height: 17px;
     position: fixed;
     z-index: 9999;
     bottom: 50px;
-    width: 100%;
-    -webkit-transition: opacity .8s;
-    transition: opacity .8s;
+    left: 50%;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
     opacity: 0
 }
 
 .mui-toast-container.mui-active {
-    opacity: 1
+    opacity: .9
 }
 
 .mui-toast-message {
     font-size: 14px;
-    width: 270px;
-    margin: 5px auto;
-    padding: 5px;
+    padding: 10px 25px;
     text-align: center;
-    color: #000;
-    border-radius: 7px;
-    background-color: #d8d8d8
+    color: #fff;
+    border-radius: 6px;
+    background-color: #323232
 }
 
 .mui-numbox {
@@ -3890,10 +3898,7 @@ body>.mui-progressbar {
 }
 
 @font-face {
-    font-family: Muiicons;
-    font-weight: 400;
-    font-style: normal;
-    src: url(../fonts/mui.ttf) format('truetype')
+    font-family:Muiicons;font-weight:400;font-style:normal;src:url(../fonts/mui.ttf) format('truetype')
 }
 
 .mui-icon {
