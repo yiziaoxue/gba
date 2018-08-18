@@ -3207,7 +3207,7 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 				scrollX: false, //是否横向滚动
 				startX: 0, //初始化时滚动至x
 				startY: 0, //初始化时滚动至y
-				indicators: true, //是否显示滚动条
+				indicators: false, //是否显示滚动条
 				stopPropagation: false,
 				hardwareAccelerated: true,
 				fixedBadAndorid: false,

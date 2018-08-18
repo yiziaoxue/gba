@@ -532,7 +532,7 @@ p {
 }
 
 .mui-scroll-wrapper {
-    position: absolute;
+    position：relative
     z-index: 2;
     top: 0;
     bottom: 0;
@@ -542,7 +542,7 @@ p {
 }
 
 .mui-scroll {
-    position: absolute;
+    position：relative
     z-index: 1;
     width: 100%;
     -webkit-transform: translateZ(0);
@@ -911,7 +911,7 @@ p {
     transition-duration: .2s;
     text-align: center;
     vertical-align: top;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     color: #333;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -1190,7 +1190,7 @@ p {
     margin: 0 -10px;
     padding: 0;
     text-align: center;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     color: #000
 }
 
@@ -1754,7 +1754,7 @@ p {
     overflow: hidden;
     margin: -11px -15px;
     padding: inherit;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     text-overflow: ellipsis;
     color: inherit
 }
