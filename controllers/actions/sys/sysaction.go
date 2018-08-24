@@ -4,7 +4,7 @@ import (
 	. "fmt"
 	"time"
 //	"net/http"
-	"shi/common"
+	"gba/common"
 	"database/sql"
 //	"encoding/json"
     "github.com/gin-gonic/gin"

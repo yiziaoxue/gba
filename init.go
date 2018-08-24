@@ -3,8 +3,8 @@ package main
 import (
 	"reflect"
     "github.com/gin-gonic/gin"
-    "shi/controllers/actions/sys"
-    "shi/controllers/actions/poem"
+    "gba/controllers/actions/sys"
+    "gba/controllers/actions/poem"
 )
 //路由器
 var routers = [2]interface{}{&sys.Routers{},&poem.Routers{}}

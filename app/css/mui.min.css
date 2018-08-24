@@ -531,7 +531,7 @@ p {
 .mui-scroll-wrapper {
     position: absolute;
     z-index: 0;
-    top: 40%;
+    top: 25%;
     bottom: 0;
     overflow: hidden;
     width: 100%;

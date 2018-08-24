@@ -12,17 +12,12 @@
                     container: '#pullrefresh',
                     down: {
                         style:'circle',//必选，下拉刷新样式，目前支持原生5+ ‘circle’ 样式
-                        height: 30,
+                        height: 36,
                         contentinit: '下拉可以刷新',
                         contentdown: '下拉可以刷新',
                         contentover: '释放立即刷新',
                         contentrefresh: '正在加载...',
                         callback: app.pulldownRefresh
-                    },
-                    up: {
-                        auto:true,
-                        contentrefresh: '正在加载...',
-                        callback: app.pullupRefresh
                     }
                 }
             });
@@ -40,7 +35,7 @@
         pullupRefresh : function() {
             var _this = this
             setTimeout(function() {
-                $.ajax({ url: app.url, data:{'num':6}, success: function(data){
+                $.ajax({ url: app.url, data:{'num':10}, headers: {'Cache-Control': "no-cache"},success: function(data){
                         if(data && data.status == 1){
                             $.each(data.data,function(index, val){
                                 var html = '<li class="mui-table-view-cell mui-media"><a href="detail/shi.html?id='+val.Id+'"><div class="mui-media-body">'
@@ -60,7 +55,7 @@
          */
         pulldownRefresh : function() {
             setTimeout(function() {
-                $.ajax({ url: app.url, data:{'num':6}, success: function(data){
+                $.ajax({ url: app.url, data:{'num':10}, success: function(data){
                         if(data && data.status == 1){
                             $.each(data.data,function(index, val){
                                 var html = '<li class="mui-table-view-cell mui-media"><a href="detail/shi.html?id='+val.Id+'"><div class="mui-media-body">'
