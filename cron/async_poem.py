@@ -27,7 +27,8 @@ class Poem:
         for dynasty in dynastys:
             data = self.getData(dynasty, page, token);
             while data and len(data["gushiwens"]) > 0:
-                self.insertData(data["gushiwens"])
+                print data["gushiwens"]
+                # self.insertData(data["gushiwens"])
                 data = self.getData(dynasty, page, token);
                 time.sleep(1) # 休眠1秒
                 num = num + 1
