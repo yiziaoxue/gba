@@ -15,7 +15,7 @@ class Poem:
         self.page = 1
         self.size = 10
         self.token = "gswapi"
-        self.dynastys = ["唐代","先秦","魏晋","南北朝","隋代","两汉","五代","宋代","金朝","元代","明代","清代"]
+        self.dynastys = ["先秦","魏晋","南北朝","隋代","两汉","五代","宋代","金朝","元代","明代","清代","唐代"]
         self.url = "https://app.gushiwen.org/api/shiwen/Default.aspx"
         self.detail_table = "poem_detail"
         self.db = MySQLdb.connect("119.29.245.47", "root", "czh5316344", "poem", charset='utf8' )
@@ -27,10 +27,8 @@ class Poem:
         for d in self.dynastys:
             data = self.getData(d, page, token);
             while data and len(data["gushiwens"]) > 0:
-                print data["gushiwens"]
-                # self.insertData(data["gushiwens"])
+                self.insertData(data["gushiwens"])
                 data = self.getData(d, page, token);
-                time.sleep(1) # 休眠1秒
                 num = num + 1
                 page = page + 1
             print num
