@@ -2,6 +2,7 @@ package poem
 
 import (
 	. "fmt"
+	"log"
 //	"time"
 	"math/rand"
 //	"net/http"
@@ -12,11 +13,9 @@ import (
 //	"encoding/json"
     "github.com/gin-gonic/gin"
     _"github.com/go-sql-driver/mysql"
-	"log"
-	"gba/conf"
 )
 var db *sql.DB
-var debugLog *Logger
+var logger *log.Logger
 
 //定义路由器结构类型
 type Routers struct {}
@@ -27,8 +26,7 @@ func (this *Routers) Inits(router *gin.Engine){
 	v.GET("/recommend", Recommend)
 	v.POST("/detail", Detail)
 	db = common.DB
-	// 创建一个日志对象
-	debugLog = log.New(conf.Logfile,"[Debug]",log.LstdFlags)
+	logger = common.GetLogger()
 }
 
 // Poem 信息
@@ -71,7 +69,7 @@ func Recommend(c *gin.Context){
 		ls = append(ls,p)
 	}
 	if err != nil {
-	    Println(err)
+		logger.Println(err)
 	}
 	c.JSON(200, gin.H{
        	"status": 1,
@@ -92,7 +90,7 @@ func Detail(c *gin.Context){
 	       	"data": err,
 		})
 	}else{
-		debugLog.Println(err)
+		logger.Println(err)
 	}
 	c.JSON(200, gin.H{
        	"status": 1,

@@ -2,15 +2,13 @@ package main
 
 import (
 //	. "fmt" aaa
-	_ "gba/common"
     "github.com/gin-gonic/gin"
     "github.com/gin-contrib/cors"
-	"os"
-	"log"
-	"gba/conf"
+	"gba/common"
 )
 
 func main() {
+	common.InitLogger()
 	config := cors.Config{
 		AllowAllOrigins:  true,  
         AllowMethods:     []string{"*"},  
@@ -22,11 +20,5 @@ func main() {
 	router.Static("/app", "./app")//加载静态资源
 	inits(router)//初始化
 	router.Run(":8000")
-
-	logFile,err  := os.Create(conf.Logfile)
-	defer logFile.Close()
-	if err != nil {
-		log.Fatalln("open file error !")
-	}
 }
 

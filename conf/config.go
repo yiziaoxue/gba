@@ -4,4 +4,4 @@ import (
 
 )
 
-var Logfile = "/data1/logs/go.log"
+var Logfile = "/data1/logs/golang.log"
