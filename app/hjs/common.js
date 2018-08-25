@@ -1,4 +1,4 @@
-var addr = "http://localhost:8000/";  //全局变量
+var addr = "http://www.kameika.cn/";  //全局变量
 $.ajaxSetup({ cache: true });
 $.ajax({ url: addr+"v1/poem/recommend", data:{'num':10}, headers: {'Cache-Control': "private"}, success: function(data){
         if(data && data.status == 1){
