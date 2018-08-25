@@ -5,6 +5,7 @@ import urllib,urllib2
 import time,datetime
 import json
 import MySQLdb
+import re
 from time import sleep
 
 ###########
@@ -52,7 +53,7 @@ class Poem:
                 "tag":row["tag"],
                 "dynasty":row['chaodai'],
                 "author":row['author'],
-                "content":row["cont"],
+                "content":self.convert(row["cont"]),
                 "country":"中国",
                 "creattime":str(t),
                 "updatetime":str(t),
@@ -71,6 +72,11 @@ class Poem:
             except Exception as e:
                 print insertSql
                 print e.message
+
+    def convert(self, data):
+        strinfo = re.compile('</br>|<br>|</p>|<p>')
+        return strinfo.sub('',data)
+
 
 now = int(time.time())           
 print "start:" + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(now))
