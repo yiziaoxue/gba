@@ -24,7 +24,7 @@ type Routers struct {}
 func (this *Routers) Inits(router *gin.Engine){
 	v := router.Group("/v1/poem")
 	v.GET("/recommend", Recommend)
-	v.POST("/detail", Detail)
+	v.GET("/detail", Detail)
 	db = common.DB
 	logger = common.GetLogger()
 }
@@ -79,7 +79,8 @@ func Recommend(c *gin.Context){
 
 //详情接口
 func Detail(c *gin.Context){
-	id := c.PostForm("id")
+	//id := c.PostForm("id")
+	id := c.DefaultQuery("id", "0")
 	sql := Sprintf("SELECT * FROM poem_detail where id = %s", id)
 	logger.Println(sql)
 	data, err := common.QueryRows(sql)
