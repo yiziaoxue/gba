@@ -74,7 +74,7 @@ class Poem:
                 print e.message
 
     def convert(self, data):
-        strinfo = re.compile('</br>|<br>|</p>|<p>')
+        strinfo = re.compile('</br>|<br>|</p>|<p>|<br />')
         return strinfo.sub('',data)
 
 
