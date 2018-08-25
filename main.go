@@ -7,6 +7,7 @@ import (
     "github.com/gin-contrib/cors"
 	"os"
 	"log"
+	"gba/conf"
 )
 
 func main() {
@@ -22,8 +23,7 @@ func main() {
 	inits(router)//初始化
 	router.Run(":8000")
 
-	fileName := "/data1/logs/golang.log"
-	logFile,err  := os.Create(fileName)
+	logFile,err  := os.Create(conf.Logfile)
 	defer logFile.Close()
 	if err != nil {
 		log.Fatalln("open file error !")
