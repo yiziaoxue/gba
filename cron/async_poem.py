@@ -24,7 +24,7 @@ class Poem:
         num = 0
         page = self.page
         token = self.token
-        for d in dynastys:
+        for d in self.dynastys:
             data = self.getData(d, page, token);
             while data and len(data["gushiwens"]) > 0:
                 print data["gushiwens"]
