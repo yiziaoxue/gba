@@ -18,6 +18,7 @@ class Poem:
         self.token = "gswapi"
         # self.dynastys = ["先秦","魏晋","南北朝","隋代","两汉","五代","宋代","金朝","元代","明代","清代","唐代"]
         self.dynastys = ["先秦","两汉","魏晋","南北朝","隋代","唐代","五代","宋代","金朝","元代","明代","清代"]
+        self.dynastys = ["唐代","五代","宋代","金朝","元代","明代","清代"]
         self.url = "https://app.gushiwen.org/api/shiwen/Default.aspx"
         self.detail_table = "poem_detail"
         self.db = MySQLdb.connect("119.29.245.47", "root", "czh5316344", "poem", charset='utf8' )
@@ -75,7 +76,7 @@ class Poem:
                 print e.message
 
     def convert(self, data):
-        strinfo = re.compile('</br>|<br>|</p>|<p>|<br />')
+        strinfo = re.compile("<.*?>|(.*?)|（.*?）")
         return strinfo.sub('',data)
 
 
