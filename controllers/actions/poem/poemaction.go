@@ -81,6 +81,7 @@ func Recommend(c *gin.Context){
 func Detail(c *gin.Context){
 	id := c.PostForm("id")
 	sql := Sprintf("SELECT * FROM poem_detail where id = %s", id)
+	logger.Println(sql)
 	data, err := common.QueryRows(sql)
 	str := convertContent(data["content"].(string))
 	data["content"] = str
