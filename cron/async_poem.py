@@ -19,7 +19,7 @@ class Poem:
         self.dynastys = ["南北朝","隋代","两汉","五代","宋代","金朝","元代","明代","清代","唐代"]
         self.url = "https://app.gushiwen.org/api/shiwen/Default.aspx"
         self.detail_table = "poem_detail"
-        self.db = MySQLdb.connect("119.29.245.47", "root", "czh5316344", "poem", charset='utf8' )
+        self.db = MySQLdb.connect("127.0.0.1", "root", "czh5316344", "poem", charset='utf8' )
         
     def run(self):
         num = 0
