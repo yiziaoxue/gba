@@ -53,17 +53,17 @@ func Recommend(c *gin.Context){
 	//rows, err := db.Query("SELECT id, title,author,dynasty,content FROM poem_detail limit ?,?", page, size)
 	sql := Sprintf("SELECT id, title,author,dynasty,content FROM poem_detail limit %d, %d", page, size)
 	data, err := common.QueryRows(sql)
-	Println(len(data))
 	if err != nil {
 		logger.Println(err)
 	}
 	iist := data[0:size]
 	for _, row := range iist {
 		if(row != nil && len(row) > 0){
+			var content_arr = convertContent(row["content"].(string))
+			row["content"] = content_arr[0]
 			row["count"] = "5"
 		}
 	}
-	Println(len(iist))
 	c.JSON(200, gin.H{
        	"status": 1,
        	"data": iist,

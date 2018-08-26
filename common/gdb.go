@@ -80,6 +80,5 @@ func QueryRows(sqlstr string)([]map[string]interface{}, error) {
 		}
 		rowMaps = append(rowMaps, record)
 	}
-	Println(len(rowMaps))
 	return rowMaps, nil
 }

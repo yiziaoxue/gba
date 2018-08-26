@@ -8,7 +8,7 @@
 			url = _this.addr+"v1/poem/detail"
 			var id = _this.getQueryString('id');
 			//加载推荐数据
-			$.ajax({ url: url,type:"POST", data:{'id':id}, success: function(data){
+			$.ajax({ url: url,type:"GET", data:{'id':id}, success: function(data){
 				if(data && data.status == 1){
 					var poem = data.data
 					var html = '<li class="mui-table-view-cell" style="text-align: center">'+poem.title+'</li>'
