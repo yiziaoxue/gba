@@ -48,7 +48,7 @@ type Res struct {
 //推荐接口
 func Recommend(c *gin.Context){
 	size := c.DefaultQuery("num", "6")
-	nums := rand.Intn(50000)
+	nums := rand.Intn(300000)
 	var page,_ = strconv.Atoi(size)
 	page = page + nums
 	rows, err := db.Query("SELECT id, title,author,dynasty,content FROM poem_detail limit ?,?", page, size)
