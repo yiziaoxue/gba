@@ -38,9 +38,9 @@
                 $.ajax({ url: app.url, data:{'num':10}, headers: {'Cache-Control': "no-cache"},success: function(data){
                         if(data && data.status == 1){
                             $.each(data.data,function(index, val){
-                                var html = '<li class="mui-table-view-cell mui-media"><a href="detail/shi.html?id='+val.Id+'"><div class="mui-media-body">'
-                                html += '《'+val.Title+'》'+val.Dynasty+':'+val.Author
-                                html += '<p class="mui-ellipsis" align="left">'+val.Content+'</p></div></a></li>'
+                                var html = '<li class="mui-table-view-cell mui-media"><a href="detail/shi.html?id='+val.id+'"><div class="mui-media-body">'
+                                html += '《'+val.title+'》'+val.dynasty+':'+val.author
+                                html += '<p class="mui-ellipsis" align="left">'+val.content+'</p></div></a></li>'
                                 $('#recom-list').append(html)
                             });
                         }
@@ -58,9 +58,9 @@
                 $.ajax({ url: app.url, data:{'num':10}, success: function(data){
                         if(data && data.status == 1){
                             $.each(data.data,function(index, val){
-                                var html = '<li class="mui-table-view-cell mui-media"><a href="detail/shi.html?id='+val.Id+'"><div class="mui-media-body">'
-                                html += '《'+val.Title+'》'+val.Dynasty+':'+val.Author
-                                html += '<p class="mui-ellipsis" align="left">'+val.Content+'</p></div></a></li>'
+                                var html = '<li class="mui-table-view-cell mui-media"><a href="detail/shi.html?id='+val.id+'"><div class="mui-media-body">'
+                                html += '《'+val.title+'》'+val.dynasty+':'+val.author
+                                html += '<p class="mui-ellipsis" align="left">'+val.content+'</p></div></a></li>'
                                 $(html).insertBefore($($("#recom-list").children("li").get(0)))
                             });
                         }
